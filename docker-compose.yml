@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  exp-mobile:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    container_name: exp-mobile
+    environment:
+      - ENV=dev
+    logging:
+      driver: json-file
+    volumes:
+      - ./:/root/app
+    command: /bin/bash
+    stdin_open: true
+    tty: true
